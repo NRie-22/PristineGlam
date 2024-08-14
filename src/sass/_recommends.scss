@@ -1,0 +1,174 @@
+.recommends {
+	padding: 110px 0 150px;
+	background-color: #f5f5f5;
+
+	@include r($r-tb) {
+		padding: 60px 0;
+	}
+
+	&-title {
+		font-size: clamp(25px, 4vw, 45px);
+		line-height: 1.2;
+		text-transform: uppercase;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 92px;
+		color: var(--title-color);
+
+		@include r($r-tb) {
+			margin-bottom: 35px;
+		}
+	}
+
+	&_list {
+		background-color: var(--white);
+		padding: 80px 30px 55px;
+
+		@include r($r-dt) {
+			padding: 20px 30px 1px;
+		}
+		@include r($r-tm) {
+			padding: 20px 30px 1px;
+		}
+
+		@include r($r-ph) {
+			padding: 20px 5px 1px;
+		}
+	}
+
+	&_list-item {
+		max-width: 750px;
+		margin: 0 auto 30px auto;
+	}
+
+	&_list-title {
+		font-size: clamp(16px, 4vw, 27px);
+		text-transform: uppercase;
+		text-align: center;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 600;
+		margin-bottom: 60px;
+		color: var(--title-color);
+		z-index: 1;
+		position: relative;
+
+		@include r($r-ph) {
+			margin-bottom: 20px;
+		}
+
+		&::after {
+			position: absolute;
+			content: '';
+			right: 0;
+			bottom: -45px;
+			left: 50%;
+			width: 170px;
+			height: 55px;
+			background-image: url(../images/icons/logoflat.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			transform: translateX(-50%);
+			z-index: -1;
+			opacity: 0.8;
+
+			@include r($r-ph) {
+				width: 120px;
+			}
+		}
+	}
+
+	&_list-eyebrows {
+		padding-left: 20px;
+	}
+
+	&_list-client {
+		padding-left: 20px;
+		&_item {
+			list-style: outside;
+			font-size: 15px;
+		}
+	}
+
+	&_list-eyebrows {
+		&_item {
+			list-style: outside;
+			font-size: 15px;
+		}
+	}
+
+	&_depilation-subtitle {
+		color: var(--title-color);
+		font-size: 16px;
+		text-align: center;
+		max-width: 745px;
+		font-weight: 600;
+		margin-bottom: 15px;
+		line-height: 1.4;
+
+		@include r($r-ph) {
+			font-size: 15px;
+		}
+	}
+
+	&_depilation-aside_block {
+		display: flex;
+		margin-bottom: 15px;
+
+		@include r($r-tm) {
+			flex-direction: column;
+		}
+	}
+
+	&_depilation-aside_title {
+		width: 200px;
+		padding: 15px;
+		color: var(--title-color);
+		font-size: 16px;
+		font-weight: 600;
+		display: flex;
+		flex-shrink: 0;
+		background-color: var(--bg-gray);
+
+		@include r($r-tm) {
+			width: auto;
+		}
+	}
+
+	&_depilation-aside_list {
+		padding-left: 20px;
+	}
+
+	&_depilation-aside_item {
+		font-size: 14px;
+		list-style: outside;
+	}
+	&_depilation-bottom-text {
+		font-weight: 600;
+		color: var(--title-color);
+		font-size: 16px;
+		line-height: 1.4;
+		text-align: center;
+		margin-bottom: 10px;
+
+		@include r($r-tm) {
+			font-size: 15px;
+			padding-left: 15px;
+		}
+	}
+	&_depilation-bottom-title {
+		font-weight: 600;
+		color: var(--title-color);
+		font-size: 16px;
+		padding-left: 20px;
+		margin-bottom: 5px;
+	}
+	&_depilation-bottom-list {
+		font-weight: 500;
+		color: var(--title-color);
+		font-size: 15px;
+		line-height: 1.4;
+		list-style: outside;
+		padding-left: 20px;
+	}
+}

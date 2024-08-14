@@ -1,0 +1,68 @@
+.promotion {
+	background-image: linear-gradient(#000000a6, #000000a6),
+		url(../images/bg-s/rednails-bg.jpg);
+	text-align: center;
+	color: var(--white);
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	padding: 135px 0;
+
+	@include r($r-tb) {
+		padding: 60px 0;
+	}
+
+	&-inner {
+		text-transform: uppercase;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&-subtitle {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 22px;
+		line-height: 1.18;
+		font-weight: 600;
+	}
+
+	&-title {
+		font-family: 'Montserrat', sans-serif;
+		font-size: clamp(20px, 5vw, 55px);
+		line-height: 1.56;
+		font-weight: 700;
+
+		margin-bottom: 30px;
+	}
+
+	&-button {
+		padding: 19px 35px;
+		width: 190px;
+
+		text-transform: uppercase;
+		font-size: 15px;
+		line-height: 1.5;
+		font-weight: 600;
+		letter-spacing: 0.002em;
+
+		border: none;
+		background-color: var(--white);
+		color: var(--default-color);
+
+		transition: color var(--transit), background-color var(--transit);
+
+		@include r($r-tm) {
+			width: auto;
+			padding: 12px 35px;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--white);
+			background-color: var(--hover-purple);
+		}
+	}
+}

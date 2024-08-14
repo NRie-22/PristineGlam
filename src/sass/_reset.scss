@@ -1,0 +1,79 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+html {
+	box-sizing: border-box;
+	// scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	min-height: 100%;
+}
+
+ul,
+ol {
+	padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	padding: 0;
+	background-color: transparent;
+	margin: 0;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+	color: inherit;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+svg {
+	fill: inherit;
+	stroke: inherit;
+	stroke-width: inherit;
+}

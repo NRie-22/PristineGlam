@@ -1,0 +1,153 @@
+.featured {
+	padding: 115px 0;
+	text-align: center;
+
+	@include r($r-tb) {
+		padding: 60px 0;
+	}
+
+	&-title {
+		font-size: clamp(30px, 5vw, 45px);
+		line-height: 1.2;
+		text-transform: uppercase;
+		font-family: 'Montserrat', sans-serif;
+		color: var(--title-color);
+		letter-spacing: 0;
+		margin-bottom: 18px;
+	}
+
+	&-subtitle {
+		max-width: 670px;
+		margin: 0 auto 78px auto;
+		color: var(--subtitle-color);
+		font-size: 15px;
+
+		@include r($r-tb) {
+			margin: 0 auto 30px auto;
+		}
+	}
+
+	&-services {
+		display: flex;
+		gap: 30px;
+		justify-content: center;
+
+		@include r($r-dt) {
+			gap: 20px;
+		}
+		@include r($r-tm) {
+			flex-wrap: wrap;
+		}
+	}
+	&-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: calc(100% / 3);
+
+		@include r($r-tm) {
+			width: calc(100% / 2);
+		}
+
+		@include r($r-ph) {
+			width: calc(100% / 1);
+		}
+	}
+
+	&-item:hover .featured-img_wrap::before {
+		opacity: 1;
+	}
+
+	&-item:hover .featured-btn {
+		opacity: 1;
+		transform: translate(-50%, 65%);
+	}
+
+	&-img_wrap {
+		display: flex;
+		max-width: 370px;
+		height: 390px;
+		position: relative;
+
+		@include r($r-tb) {
+			height: 300px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(
+				180deg,
+				rgba(21, 21, 21, 0) 38.12%,
+				rgba(21, 21, 21, 0.364) 100%
+			);
+			opacity: 0;
+			transition: opacity var(--transit);
+		}
+	}
+
+	&-img {
+		flex: 1;
+		object-fit: cover;
+	}
+
+	&-btn {
+		font-weight: 500;
+		font-size: 13px;
+		text-transform: uppercase;
+		padding: 12px 25px;
+		color: var(--white);
+		background-color: var(--hover-purple);
+		position: absolute;
+		top: 62%;
+		left: 50%;
+		transform: translatex(-50%);
+		opacity: 0;
+		transition: all var(--transit);
+
+		@include r($r-tb) {
+			padding: 12px 12px;
+		}
+
+		@include r($r-ph) {
+			padding: 12px 8px;
+		}
+
+		&:hover {
+			color: var(--hover-purple);
+			background-color: var(--white);
+		}
+	}
+
+	&-title_link {
+		text-transform: uppercase;
+		font-family: 'Montserrat', sans-serif;
+		color: var(--title-color);
+		font-size: 22px;
+		line-height: 1.18;
+		margin-bottom: 10px;
+		font-weight: 600;
+		display: block;
+	}
+
+	&-text {
+		font-family: 'Montserrat', sans-serif;
+		line-height: 1.14;
+		letter-spacing: 0.05em;
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: var(--hover-purple);
+	}
+	&-name {
+		padding: 25px 5px;
+
+		@include r($r-tm) {
+			padding: 10px;
+		}
+	}
+}

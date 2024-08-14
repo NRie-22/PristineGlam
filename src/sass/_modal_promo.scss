@@ -1,0 +1,119 @@
+.modal_promo {
+	background-image: linear-gradient(#000000a6, #000000a6),
+		url(../images/bg-s/bg-figma.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	box-shadow: 0px 0px 15px rgba(21, 21, 21, 0.35);
+
+	max-width: 650px;
+	min-height: 400px;
+	width: 100%;
+	color: var(--white);
+
+	position: fixed;
+	z-index: 22;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1);
+	transition: transform var(--transit), opacity var(--transit),
+		visibility var(--transit);
+
+	@include r($r-tm) {
+		width: 95%;
+	}
+
+	&-inner {
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+
+		@include r($r-ph) {
+			padding: 12px;
+		}
+	}
+
+	&-backdrop {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 21;
+		background-color: rgba(255, 255, 255, 0.4);
+		transition: opacity var(--transit);
+	}
+
+	&-close {
+		width: 30px;
+		height: 30px;
+		border-radius: 5px;
+		background-color: var(--hover-purple);
+		border: none;
+		margin-left: auto;
+		transition: opacity var(--transit);
+
+		&:hover,
+		&:focus,
+		&:active {
+			opacity: 0.6;
+		}
+	}
+
+	&-subtitle {
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+
+	&-title {
+		text-transform: uppercase;
+		font-family: 'Montserrat', sans-serif;
+		margin-bottom: 20px;
+		font-size: clamp(16px, 4vw, 24px);
+
+		@include r($r-ph) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&-text {
+		text-align: left;
+		font-weight: 400;
+		margin-bottom: 20px;
+
+		@include r($r-ph) {
+			font-size: 14px;
+		}
+	}
+
+	&-button {
+		text-transform: uppercase;
+		font-size: 16px;
+		font-weight: 600;
+		letter-spacing: 0.002em;
+		padding: 18px 35px;
+		display: inline-block;
+		margin-bottom: 10px;
+		color: var(--default-color);
+		background-color: var(--white);
+		transition: color var(--transit), background-color var(--transit);
+
+		@include r($r-ph) {
+			padding: 12px 25px;
+			font-size: 15px;
+			width: auto;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--hover-purple);
+			color: var(--white);
+		}
+	}
+
+	&.is-hidden {
+		transform: translate(-50%, -50%) scale(0);
+	}
+}

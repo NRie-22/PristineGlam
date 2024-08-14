@@ -1,0 +1,269 @@
+.contacts {
+	padding: 115px 0;
+	background-color: var(--bg-gray);
+	position: relative;
+
+	@include r($r-tb) {
+		padding: 60px 0;
+	}
+
+	&-inner {
+		display: flex;
+		justify-content: space-between;
+
+		@include r($r-tb) {
+			flex-direction: column;
+			max-width: 720px;
+			margin: 0 auto;
+			align-items: center;
+		}
+	}
+
+	&-address_block {
+		max-width: 390px;
+		width: 100%;
+		margin-right: 20px;
+
+		@include r($r-tb) {
+			margin-bottom: 30px;
+			margin-right: 0;
+		}
+	}
+
+	&-title {
+		font-family: 'Montserrat', sans-serif;
+		font-size: clamp(22px, 4vw, 45px);
+		color: var(--title-color);
+		text-transform: uppercase;
+		line-height: 1.2;
+		font-weight: 700;
+
+		@include r($r-tb) {
+			text-align: center;
+		}
+	}
+
+	&-list {
+		margin-top: 65px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 65px;
+
+		@include r($r-tb) {
+			margin-top: 35px;
+			row-gap: 35px;
+		}
+	}
+
+	&-item {
+		display: flex;
+		// font-size: 22px;
+		line-height: 1.18;
+		font-weight: 600;
+
+		&:hover .call::after {
+			transform: rotate(175deg) translate(15px, 15px);
+		}
+
+		&:hover .map::after {
+			transform: translate(-45px, 2px);
+		}
+
+		&:hover .plane::after {
+			transform: rotate(-90deg) translateY(-40px);
+		}
+
+		@include r($r-ph) {
+			flex-direction: column;
+			text-align: center;
+			// font-size: 20px;
+		}
+	}
+
+	&-icon {
+		display: flex;
+		flex-shrink: 0;
+		width: 60px;
+		height: 60px;
+		margin-right: 30px;
+		fill: var(--title-color);
+		position: relative;
+		z-index: 1;
+
+		@include r($r-ph) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&-icon_wrap {
+		position: relative;
+
+		@include r($r-ph) {
+			width: 60px;
+			margin: 0 auto;
+		}
+
+		&::after {
+			position: absolute;
+			content: '';
+			top: 30%;
+			left: 58%;
+			z-index: -1;
+			transition: transform 0.6s ease-in-out;
+
+			@include r($r-ph) {
+				left: 93%;
+			}
+		}
+
+		&.call::after {
+			border-color: transparent transparent #c9c0d5 transparent;
+			width: 0;
+			height: 0;
+			border-width: 0 12px 22px 12px;
+			border-style: solid;
+			transform: rotate(137.76deg) translate(0, 0);
+			z-index: 0;
+		}
+
+		&.map::after {
+			width: 24px;
+			height: 24px;
+			background-color: #c9c0d5;
+			border-radius: 50%;
+			z-index: 0;
+		}
+
+		&.plane::after {
+			width: 20px;
+			height: 20px;
+			background-color: #c9c0d5;
+			z-index: 0;
+			transform: translateY(0) rotate(45deg);
+		}
+	}
+
+	&-link {
+		margin-bottom: 5px;
+		display: block;
+		transition: color var(--transit);
+		font-family: 'Montserrat', sans-serif;
+		font-size: 22px;
+
+		@include r($r-ph) {
+			font-size: 19px;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--hover-purple);
+		}
+	}
+
+	&-subtitle {
+		color: var(--subtitle-color);
+		font-size: 15px;
+		font-weight: 300;
+		letter-spacing: -0.03em;
+	}
+
+	&-form_block {
+		max-width: 670px;
+		width: 100%;
+	}
+
+	&-form {
+		display: flex;
+		flex-direction: column;
+		margin-top: 20px;
+
+		&::after {
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(51, 51, 51, 0.9) url('../images/loading.gif')
+				center/100px no-repeat;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s ease-in-out;
+			z-index: 100;
+		}
+
+		&._sending::after {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&-form_wrap {
+		position: relative;
+		width: 100%;
+
+		&._error .contacts-form_mistake {
+			display: block;
+		}
+	}
+
+	&-form_mistake {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		color: var(--error-color);
+		z-index: 10;
+		font-size: 10px;
+		font-weight: 300;
+		display: none;
+	}
+
+	&-form_input {
+		border: 1px solid #c4c4c4;
+		padding: 16px 25px;
+		background-color: var(--white);
+		font-weight: 400;
+		height: 60px;
+		color: var(--title-color);
+		margin-bottom: 20px;
+		width: 100%;
+
+		&::placeholder {
+			color: var(--title-color);
+		}
+
+		&.textarea {
+			height: 200px;
+			resize: vertical;
+			margin-bottom: 30px;
+		}
+	}
+
+	&-form_button {
+		min-height: 60px;
+		color: var(--white);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.002em;
+		padding: 14px 35px;
+		border: 1px solid var(--default-color);
+		background-color: var(--default-color);
+		max-width: 310px;
+		transition: background-color var(--transit);
+
+		@include r($r-tb) {
+			margin: 0 auto;
+		}
+
+		@include r($r-ph) {
+			padding: 14px 25px;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--hover-purple);
+		}
+	}
+}

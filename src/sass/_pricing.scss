@@ -1,0 +1,163 @@
+.pricing {
+	padding: 110px 0 0;
+	background-color: #f5f5f5;
+
+	@include r($r-tb) {
+		padding: 60px 0 0;
+	}
+
+	&-title {
+		font-size: clamp(30px, 5vw, 45px);
+		line-height: 1.2;
+		text-transform: uppercase;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 92px;
+		color: var(--title-color);
+
+		@include r($r-tb) {
+			margin-bottom: 30px;
+		}
+	}
+
+	&-header {
+		display: flex;
+		justify-content: center;
+		background-color: var(--default-color);
+		border-radius: 10px 10px 0 0;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(255, 255, 255, 0.4);
+		text-transform: uppercase;
+		gap: 10px;
+		padding: 15px 0;
+		align-items: center;
+
+		@include r($r-tm) {
+			flex-direction: column;
+			padding: 20px 0;
+		}
+	}
+
+	&-header_item {
+		padding: 15px;
+		cursor: pointer;
+		transition: color var(--transit);
+		text-align: center;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--white);
+		}
+
+		&.active {
+			color: var(--white);
+		}
+	}
+
+	&-content_list {
+		padding: 80px 30px 55px 30px;
+		background-color: var(--white);
+
+		@include r($r-tm) {
+			padding: 20px 0 1px;
+		}
+	}
+
+	&-content_item {
+		display: none;
+		max-width: 502px;
+		margin: 0 auto;
+		transition: opacity var(--transit);
+
+		&.active {
+			display: block;
+		}
+	}
+
+	.fade-in {
+		animation: fadeIn var(--transit);
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	&-service_title {
+		font-size: clamp(15px, 5vw, 27px);
+		text-transform: uppercase;
+		text-align: center;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 600;
+		margin-bottom: 60px;
+		color: var(--title-color);
+		z-index: 1;
+		position: relative;
+
+		@include r($r-tm) {
+			margin-bottom: 40px;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			right: 0;
+			bottom: -38px;
+			left: 50%;
+
+			background-image: url(../images/icons/logoflat.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 170px;
+			height: 55px;
+			transform: translateX(-50%);
+			opacity: 0.8;
+
+			@include r($r-ph) {
+				width: 120px;
+				bottom: -45px;
+			}
+		}
+	}
+
+	&-service_list {
+		margin-bottom: 30px;
+		padding: 0 5px;
+	}
+
+	&-service_item {
+		font-size: 15px;
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+		transition: color var(--transit);
+
+		@include r($r-ph) {
+			font-size: 14px;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--hover-purple);
+		}
+	}
+
+	&-service_link {
+		display: inline-block;
+		margin-right: auto;
+		text-transform: uppercase;
+	}
+	&-service_price {
+		display: flex;
+		gap: 10px;
+		padding-left: 10px;
+	}
+}

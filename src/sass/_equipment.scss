@@ -1,0 +1,151 @@
+.equipment {
+	padding: 130px 0 120px;
+
+	@include r($r-tb) {
+		padding: 60px 0;
+	}
+
+	&-inner {
+		text-align: center;
+	}
+
+	&-list {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include r($r-tm) {
+			flex-direction: column;
+		}
+	}
+
+	&-item {
+		flex: 0 0 auto;
+		width: calc(100% / 3);
+		padding: 0 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include r($r-tb) {
+			width: calc(100% / 2);
+		}
+
+		@include r($r-tm) {
+			width: 100%;
+			padding: 0;
+		}
+
+		&:not(:last-child) {
+			@include r($r-tb) {
+				margin-bottom: 50px;
+			}
+
+			@include r($r-tm) {
+				margin-bottom: 30px;
+			}
+		}
+
+		&:hover .woman::after {
+			transform: rotate(175deg) translate(15px, 15px);
+		}
+
+		&:hover .chair::after {
+			transform: translate(-45px, 2px);
+		}
+
+		&:hover .phone::after {
+			transform: rotate(-90deg) translateY(-40px);
+		}
+	}
+
+	&-icon {
+		background-repeat: no-repeat;
+		margin: 0 auto;
+		display: inline-block;
+		height: 60px;
+		width: 60px;
+		background-size: contain;
+		background-position: center center;
+		margin-bottom: 30px;
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 33%;
+			left: 82%;
+			z-index: -1;
+			transition: all 0.6s;
+		}
+
+		&.woman {
+			background-image: url('../images/icons/woman.svg');
+			&::after {
+				border-color: transparent transparent #c9c0d5 transparent;
+				border-width: 0 10px 18px 10px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				transform: rotate(137.76deg) translate(0, 0);
+				will-change: transform;
+			}
+		}
+
+		&.chair {
+			background-image: url('../images/icons/salon_chair.svg');
+			&::after {
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				top: 25%;
+				left: 74%;
+				will-change: transform;
+				background-color: #c9c0d5;
+			}
+		}
+
+		&.phone {
+			background-image: url('../images/icons/phone.svg');
+			&::after {
+				width: 16px;
+				height: 16px;
+				transform: translateY(0)rotate(45deg);
+				will-change: transform;
+				background-color: #c9c0d5;
+			}
+		}
+	}
+
+	&-title {
+		text-transform: uppercase;
+		font-family: 'Montserrat', sans-serif;
+		letter-spacing: 0;
+		font-size: 22px;
+		line-height: 1.18;
+		font-weight: 600;
+		color: var(--title-color);
+		transition: color var(--transit);
+		display: block;
+		width: fit-content;
+		margin: 0 auto 15px;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: var(--hover-purple);
+		}
+	}
+
+	&-text {
+		font-weight: 300;
+		font-size: 15px;
+		line-height: 1.66;
+		letter-spacing: -0.03em;
+		color: rgba(21, 21, 21, 0.6);
+		max-width: 330px;
+
+		@include r($r-tm) {
+			margin: 0 auto 30px;
+		}
+	}
+}

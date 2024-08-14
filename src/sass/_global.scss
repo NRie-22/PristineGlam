@@ -1,0 +1,201 @@
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 1.67;
+	letter-spacing: 0.02em;
+	color: var(--default-color);
+	display: flex;
+	flex-direction: column;
+	background-color: var(--white);
+}
+
+.main {
+	flex-grow: 1;
+}
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.nav-menu__btn {
+	height: 42px;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	position: relative;
+	z-index: 1;
+	display: none;
+	margin-right: 20px;
+	cursor: pointer;
+	transition: opacity var(--transit);
+
+	@include r($r-ph) {
+		margin-right: 15px;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		opacity: 0.5;
+	}
+
+	@include r($r-tb) {
+		display: flex;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 36px;
+		height: 2px;
+		background-color: #e7e7e7;
+		left: 0;
+		right: 0;
+		transition: all var(--transit);
+		transform: rotate(180deg);
+	}
+
+	& span {
+		width: 36px;
+		height: 2px;
+		background-color: #e7e7e7;
+		transition: all var(--transit);
+	}
+
+	&::before {
+		top: 7px;
+	}
+	&::after {
+		bottom: 7px;
+	}
+
+	&.active::before {
+		transform: rotate3d(0, 0, 1, -35deg);
+		width: 15px;
+		top: 15px;
+	}
+
+	&.active::after {
+		transform: rotate3d(0, 0, 1, 35deg);
+		width: 15px;
+		bottom: 15px;
+	}
+
+	&.active span {
+		transform: rotate(180deg);
+	}
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	color: var(--white);
+	font-size: clamp(23px, 6vw, 40px);
+	font-weight: 600;
+	font-family: 'Montserrat', sans-serif;
+	transition: opacity var(--transit);
+
+	&-link {
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+		// width: 100%;
+	}
+
+	&-img {
+		transition: all var(--transit);
+		width: clamp(35px, 4vw, 60px);
+		margin-right: 10px;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		opacity: 0.5;
+	}
+}
+
+.animated-element {
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	transition: opacity var(--transit), transform var(--transit);
+}
+
+.animated {
+	animation-fill-mode: both;
+	opacity: 1;
+	visibility: visible;
+	overflow: hidden;
+}
+
+.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.scrollUpButton {
+	position: fixed;
+	z-index: 20;
+	bottom: 40px;
+	right: 40px;
+	width: 60px;
+	height: 60px;
+
+	background-color: var(--hover-purple);
+	color: var(--white);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transform: translate3d(0, 100px, 0);
+	transition: transform var(--transit), opacity var(--transit);
+
+	@include r($r-ph) {
+		bottom: 15px;
+		right: 15px;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		opacity: 0.6;
+	}
+
+	.scrollUpIcon {
+		fill: var(--white);
+		width: 16px;
+		height: 14px;
+	}
+
+	// .has-lightbox {
+	// 	margin-right: 17px !important;
+	// }
+}

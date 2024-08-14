@@ -1,0 +1,51 @@
+:root {
+	--accent: #ffd541;
+	--title-color: #151515;
+	--default-color: #323232;
+	--hover-purple: #7240b2;
+	--default-bg: #343333;
+	--white: #ffffff;
+	--bg-gray: #f5f5f5;
+	--logo-color: #234424;
+	--subtitle-color: rgba(21, 21, 21, 0.8);
+	--shadow-color: rgba(255, 255, 255, 0.5);
+	--error-color: #ff0000;
+	--transit: 0.3s ease-in-out;
+}
+
+@function max($numbers...) {
+	@return m#{a}x(#{$numbers});
+}
+@function min($numbers...) {
+	@return m#{i}n(#{$numbers});
+}
+
+$r-dt: 1200;
+$r-tb: 980;
+$r-tm: 768;
+$r-ph: 575;
+
+@mixin r($width) {
+	@media (max-width: #{$width}px) {
+		@content;
+	}
+}
+
+// @include r($r-dt) {}
+//  clamp(20px, 5vw, 50px)
+
+// ____Обрезка текста_____
+@mixin line-clamp($lines: 1) {
+	@if $lines <=1 {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	} @else {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: $lines;
+		-webkit-box-orient: vertical;
+	}
+}
+//   @include line-clamp(2);
