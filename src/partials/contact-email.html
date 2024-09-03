@@ -1,0 +1,106 @@
+<section class="contacts" id="contacts">
+	<div class="container">
+		<div class="contacts-inner">
+			<div class="contacts-address_block">
+				<h2 class="contacts-title" data-t="contacts-title">Contacts</h2>
+				<ul class="contacts-list">
+					<li class="contacts-item">
+						<div class="contacts-icon_wrap call">
+							<svg class="contacts-icon" width="60" height="60">
+								<use href="images/sprite.svg#call" />
+							</svg>
+						</div>
+						<div class="contacts-wrapper">
+							<a class="contacts-link" href="tel:+729458575"> 729-458-575 </a>
+							<p class="contacts-subtitle" data-t="contacts-subtitle">
+								You can call us anytime
+							</p>
+						</div>
+					</li>
+
+					<li class="contacts-item">
+						<div class="contacts-icon_wrap map">
+							<svg class="contacts-icon" width="60" height="60">
+								<use href="images/sprite.svg#map" />
+							</svg>
+						</div>
+						<a
+							class="contacts-link"
+							href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2325.2281206250573!2d18.65024887674647!3d54.35294979893311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd737513f108d1%3A0xd9e0f9336230c122!2sLawendowa%209%2C%2080-840%20Gda%C5%84sk%2C%20Polen!5e0!3m2!1sde!2sch!4v1707491746654!5m2!1sde!2sch"
+							data-t="contacts-address"
+						>
+							Lawendowa 8, 80-840 Gdańsk, Polska
+						</a>
+					</li>
+
+					<li class="contacts-item">
+						<div class="contacts-icon_wrap plane">
+							<svg class="contacts-icon" width="60" height="60">
+								<use href="images/sprite.svg#plane" />
+							</svg>
+						</div>
+						<div class="contacts-wrapper">
+							<a class="contacts-link" href="mailto:nadia.khylko@gmail.com">
+								nadia.khylko@gmail.com
+							</a>
+							<p class="contacts-subtitle" data-t="contacts-emailus">
+								Feel free to email us your questions
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="contacts-form_block">
+				<h2 class="contacts-title" data-t="contacts-touch">GET IN TOUCH</h2>
+
+				<form class="contacts-form" id="contactsForm">
+					<input
+						type="hidden"
+						name="access_key"
+						value="b8931619-2c6f-41eb-9799-19402671ec97"
+					/>
+					<div class="contacts-form_wrap">
+						<input
+							class="contacts-form_input _req"
+							type="text"
+							name="name"
+							placeholder="Name"
+						/>
+						<span class="contacts-form_mistake" data-t="contacts-mistake1">
+							This field is required
+						</span>
+					</div>
+					<div class="contacts-form_wrap">
+						<input
+							class="contacts-form_input _email _req"
+							type="email"
+							name="email"
+							placeholder="Email"
+						/>
+						<span class="contacts-form_mistake" data-t="contacts-mistake2">
+							This field is required
+						</span>
+					</div>
+					<div class="contacts-form_wrap">
+						<textarea
+							class="contacts-form_input _req textarea"
+							name="message"
+							placeholder="Message"
+						></textarea>
+						<span class="contacts-form_mistake" data-t="contacts-mistake3"
+							>This field is required
+						</span>
+					</div>
+					<button
+						class="contacts-form_button"
+						type="submit"
+						data-t="contacts-btn"
+					>
+						send message
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

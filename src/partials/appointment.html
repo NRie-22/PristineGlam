@@ -1,0 +1,56 @@
+<div class="appointment" id="appointment">
+	<div class="container">
+		<form class="appointment-form" id="appointmentForm">
+			<input
+				type="hidden"
+				name="access_key"
+				value="b8931619-2c6f-41eb-9799-19402671ec97"
+			/>
+
+			<label class="appointment-label">
+				name
+				<input
+					class="appointment-input _req"
+					name="name"
+					type="text"
+					placeholder="Your name"
+				/>
+				<span class="appointment-label_mistake" data-t="appoint-mistake1">
+					This field is required
+				</span>
+			</label>
+			<label class="appointment-label">
+				phone
+				<input
+					class="appointment-input _req"
+					name="phone"
+					type="text"
+					placeholder="Your phone number"
+					minlength="5"
+					pattern="\\+[0-9]{2}\\[0-9]{3}\\-[0-9]{3}\\-[0-9]{2}\\-[0-9]{2}"
+					title="+xx-xxx-xxx-xx-xx"
+					oninput="this.value = this.value.replace(/[^0-9\+\-]/g, '');"
+				/>
+				<span class="appointment-label_mistake" data-t="appoint-mistake2">
+					This field is required
+				</span>
+			</label>
+			<label class="appointment-label">
+				date
+				<input
+					class="appointment-input _req"
+					id="appointmentPicker"
+					name="date"
+					type="text"
+					placeholder="01/01/2024"
+				/>
+				<span class="appointment-label_mistake" data-t="appoint-mistake3">
+					This field is required
+				</span>
+			</label>
+			<button class="appointment-submit-btn" type="submit" data-t="appoint-btn">
+				Make an appointment
+			</button>
+		</form>
+	</div>
+</div>
