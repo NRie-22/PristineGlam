@@ -1,0 +1,13 @@
+import './JS/currentSection';
+import './JS/priceTabs';
+import './JS/scrollSmooth';
+import './JS/scrollUp';
+import './JS/animation';
+import './JS/formSend';
+import './JS/formSendTop';
+import './JS/menuButton';
+import './JS/modalPromo';
+import './JS/modalAbout';
+import './JS/lightbox';
+import './JS/translate';
+import './JS/airDatePicker';
