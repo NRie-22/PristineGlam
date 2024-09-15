@@ -8445,6 +8445,6 @@ var _default = {
 };
 exports.default = _default;
 
-},{}]},["icZzK","8lqZg"], "8lqZg", "parcelRequire5d69")
+},{}]},["icZzK","8lqZg"], "8lqZg", "parcelRequire16ac")
 
 //# sourceMappingURL=index.975ef6c8.js.map

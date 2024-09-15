@@ -1,11 +1,11 @@
 {
-  "name": "beauty-style",
+  "name": "PristineGlam",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://NRie-22/.github.io/beauty-style",
+  "homepage": "https://NRie-22/.github.io/PristineGlam",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /beauty-style/"
+    "build": "parcel build src/*.html --public-url /PristineGlam/"
   },
   "repository": {
     "type": "git",

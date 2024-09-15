@@ -763,6 +763,6 @@ const pl = {
     "mod_promo-contact": "Skontaktuj si\u0119 z nami"
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["frCXN"], null, "parcelRequire5d69")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["frCXN"], null, "parcelRequire16ac")
 
 //# sourceMappingURL=pl.ac57b597.js.map

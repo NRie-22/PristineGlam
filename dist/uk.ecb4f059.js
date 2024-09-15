@@ -763,6 +763,6 @@ const uk = {
     "mod_promo-contact": "\u0417\u0432&rsquo;\u044F\u0436\u0456\u0442\u044C\u0441\u044F \u0437 \u043D\u0430\u043C\u0438"
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["idB4P"], null, "parcelRequire5d69")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["idB4P"], null, "parcelRequire16ac")
 
 //# sourceMappingURL=uk.ecb4f059.js.map
